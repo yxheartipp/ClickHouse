@@ -7,80 +7,80 @@ insert into test_native_parquet select number, number, number+1, 0.1*number, 0.2
 select sum(i16) from test_native_parquet;
 49995000
 select count(), sum(cityHash64(*)) from test_native_parquet where i16 < 10;
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where i16 <= 10;
-11	15578463108839725708
+11	15349009168526123765
 select count(), sum(cityHash64(*)) from test_native_parquet where i16 between 10 and 20;
-11	10219762529868547614
+11	14824849039671172580
 select count(), sum(cityHash64(*)) from test_native_parquet where i16 > 9990;
-9	18270583161897139887
+9	59173259005895283
 select count(), sum(cityHash64(*)) from test_native_parquet where i16 >= 9990;
-10	18373172933706168453
+10	7824744808093082478
 -- test int32
 select sum(i32) from test_native_parquet;
 49995000
 select count(), sum(cityHash64(*)) from test_native_parquet where i32 < 10;
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where i32 <= 10;
-11	15578463108839725708
+11	15349009168526123765
 select count(), sum(cityHash64(*)) from test_native_parquet where i32 between 10 and 20;
-11	10219762529868547614
+11	14824849039671172580
 select count(), sum(cityHash64(*)) from test_native_parquet where i32 > 9990;
-9	18270583161897139887
+9	59173259005895283
 select count(), sum(cityHash64(*)) from test_native_parquet where i32 >= 9990;
-10	18373172933706168453
+10	7824744808093082478
 -- test int64
 select sum(i64) from test_native_parquet;
 50005000
 select count(), sum(cityHash64(*)) from test_native_parquet where i64 < 10;
-9	17809492629118315001
+9	1358751494231574021
 select count(), sum(cityHash64(*)) from test_native_parquet where i64 <= 10;
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where i64 between 10 and 20;
-11	17832305608913694258
+11	15903883653141299622
 select count(), sum(cityHash64(*)) from test_native_parquet where i64 > 9990;
-10	18373172933706168453
+10	7824744808093082478
 select count(), sum(cityHash64(*)) from test_native_parquet where i64 >= 9990;
-11	353827285964247487
+11	8263954477250309667
 -- test float
 select sum(float) from test_native_parquet;
 4999500.000000022
 select count(), sum(cityHash64(*)) from test_native_parquet where float < 1;
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where float <= 1;
-11	15578463108839725708
+11	15349009168526123765
 select count(), sum(cityHash64(*)) from test_native_parquet where float between 1 and 2;
-11	10219762529868547614
+11	14824849039671172580
 select count(), sum(cityHash64(*)) from test_native_parquet where float > 999;
-9	18270583161897139887
+9	59173259005895283
 select count(), sum(cityHash64(*)) from test_native_parquet where float >= 999;
-10	18373172933706168453
+10	7824744808093082478
 -- test double
 select sum(double) from test_native_parquet;
 9999000
 select count(), sum(cityHash64(*)) from test_native_parquet where double < 2;
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where double <= 2;
-11	15578463108839725708
+11	15349009168526123765
 select count(), sum(cityHash64(*)) from test_native_parquet where double between 2 and 4;
-11	10219762529868547614
+11	14824849039671172580
 select count(), sum(cityHash64(*)) from test_native_parquet where double > 9990 *0.2;
-9	18270583161897139887
+9	59173259005895283
 select count(), sum(cityHash64(*)) from test_native_parquet where double >= 9990 *0.2;
-10	18373172933706168453
+10	7824744808093082478
 -- test date
 select max(date32) from test_native_parquet;
 1997-05-18
 select count(), sum(cityHash64(*)) from test_native_parquet where date32 < '1970-01-10';
-9	17809492629118315001
+9	1358751494231574021
 select count(), sum(cityHash64(*)) from test_native_parquet where date32 <= '1970-01-10';
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where date32 between '1970-01-10' and '1970-01-20';
-11	17832305608913694258
+11	15903883653141299622
 select count(), sum(cityHash64(*)) from test_native_parquet where date32 > '1970-01-10';
-9990	4266590564120591404
+9990	5878635142665302345
 select count(), sum(cityHash64(*)) from test_native_parquet where date32 >= '1970-01-10';
-9991	7354964311672689980
+9991	15424945477593450388
 -- test datetime
 select max(time64) from test_native_parquet;
 2024-10-11 02:46:39.000
@@ -88,22 +88,22 @@ select max(time64) from test_native_parquet;
 select max(string) from test_native_parquet;
 9999
 select count(), sum(cityHash64(*)) from test_native_parquet where string = '1';
-1	15504309223100718065
+1	669483284030903721
 select count(), sum(cityHash64(*)) from test_native_parquet where string in ('1','2','3');
-3	2211614333404049887
+3	11995746182993880891
 -- test date
 select max(date) from test_native_parquet;
 1997-05-18
 select count(), sum(cityHash64(*)) from test_native_parquet where date < '1970-01-10';
-9	17809492629118315001
+9	1358751494231574021
 select count(), sum(cityHash64(*)) from test_native_parquet where date <= '1970-01-10';
-10	2451122302960861961
+10	10905061829159722064
 select count(), sum(cityHash64(*)) from test_native_parquet where date between '1970-01-10' and '1970-01-20';
-11	17832305608913694258
+11	15903883653141299622
 select count(), sum(cityHash64(*)) from test_native_parquet where date > '1970-01-10';
-9990	4266590564120591404
+9990	5878635142665302345
 select count(), sum(cityHash64(*)) from test_native_parquet where date >= '1970-01-10';
-9991	7354964311672689980
+9991	15424945477593450388
 -- test datetime
 select max(time) from test_native_parquet;
 2024-10-11 02:46:39
@@ -114,80 +114,80 @@ insert into test_nullable_native_parquet select if(number%5, number, NULL), if(n
 select sum(i16) from test_nullable_native_parquet;
 40000000
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i16 < 10;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i16 <= 10;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i16 between 10 and 20;
-8	17152352120811830846
+8	5999256033678074540
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i16 > 9990;
-8	15646931204936588121
+8	2952767009574713849
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i16 >= 9990;
-8	15646931204936588121
+8	2952767009574713849
 -- test int32
 select sum(i32) from test_nullable_native_parquet;
 40000000
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i32 < 10;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i32 <= 10;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i32 between 10 and 20;
-8	17152352120811830846
+8	5999256033678074540
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i32 > 9990;
-8	15646931204936588121
+8	2952767009574713849
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i32 >= 9990;
-8	15646931204936588121
+8	2952767009574713849
 -- test int64
 select sum(i64) from test_nullable_native_parquet;
 40008000
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i64 < 10;
-7	9388499796941600357
+7	5892784683329366153
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i64 <= 10;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i64 between 10 and 20;
-9	1793981794654377806
+9	15545566368606222583
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i64 > 9990;
-8	15646931204936588121
+8	2952767009574713849
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where i64 >= 9990;
-9	16074329630904218771
+9	3391976678731941038
 -- test float
 select sum(float) from test_nullable_native_parquet;
 4000000.0000000224
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where float < 1;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where float <= 1;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where float between 1 and 2;
-8	17152352120811830846
+8	5999256033678074540
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where float > 999;
-8	15646931204936588121
+8	2952767009574713849
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where float >= 999;
-8	15646931204936588121
+8	2952767009574713849
 -- test double
 select sum(double) from test_nullable_native_parquet;
 8000000
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where double < 2;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where double <= 2;
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where double between 2 and 4;
-8	17152352120811830846
+8	5999256033678074540
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where double > 9990 *0.2;
-8	15646931204936588121
+8	2952767009574713849
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where double >= 9990 *0.2;
-8	15646931204936588121
+8	2952767009574713849
 -- test date
 select max(date32) from test_nullable_native_parquet;
 1997-05-18
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date32 < '1970-01-10';
-7	9388499796941600357
+7	5892784683329366153
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date32 <= '1970-01-10';
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date32 between '1970-01-10' and '1970-01-20';
-9	1793981794654377806
+9	15545566368606222583
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date32 > '1970-01-10';
-7992	11342056016178131070
+7992	12862520669362146776
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date32 >= '1970-01-10';
-7993	14430429763730229646
+7993	3962086930580743203
 -- test datetime
 select max(time64) from test_nullable_native_parquet;
 2024-10-11 02:46:39.000
@@ -195,22 +195,22 @@ select max(time64) from test_nullable_native_parquet;
 select max(string) from test_nullable_native_parquet;
 9999
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where string = '1';
-1	15504309223100718065
+1	669483284030903721
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where string in ('1','2','3');
-3	2211614333404049887
+3	11995746182993880891
 -- test date
 select max(date) from test_nullable_native_parquet;
 1997-05-18
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date < '1970-01-10';
-7	9388499796941600357
+7	5892784683329366153
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date <= '1970-01-10';
-8	12476873544493698933
+8	15439095018257514196
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date between '1970-01-10' and '1970-01-20';
-9	1793981794654377806
+9	15545566368606222583
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date > '1970-01-10';
-7992	11342056016178131070
+7992	12862520669362146776
 select count(), sum(cityHash64(*)) from test_nullable_native_parquet where date >= '1970-01-10';
-7993	14430429763730229646
+7993	3962086930580743203
 -- test datetime
 select max(time) from test_nullable_native_parquet;
 2024-10-11 02:46:39
